@@ -40,8 +40,8 @@ description: Use when building, reviewing, or discussing working memory assessme
 |---------|---------|-------|------------|--------|
 | 2-back accuracy | **85–95%** | 70–100% | Below 70% | Aggregate from N-back literature (no single definitive normative study exists); see EVIDENCE.md |
 | 2-back d' (sensitivity) | 2.0–3.0 | 1.0–4.0 | Below 1.5 | Various |
-| Typical training start | 2-back | — | — | Thompson et al. (2016) |
-| Typical training ceiling | 3-back (mean 3.29) | 2–6 | — | Thompson et al. (2016): 52% reach 4-back, 15% reach 6-back |
+| Typical training start | 2-back | — | — | Lawlor-Savage & Goghari (2016), PMC4820261 |
+| Typical training ceiling | 3-back (mean 3.29) | 2–6 | — | Lawlor-Savage & Goghari (2016): N-back progression over 22 sessions |
 
 ### Operation Span (OSPAN — Complex Span)
 
@@ -61,8 +61,8 @@ description: Use when building, reviewing, or discussing working memory assessme
 ### What WM Training CAN Do (Near-Transfer)
 - Improve performance on trained tasks: g=0.80–1.88 (Melby-Lervag 2016)
 - Modest near-transfer to untrained WM tasks: **g=0.28–0.31** (active controls)
-- Some long-term academic gains with Cogmed: d=0.66 reading at 24 months (Holmes & Gathercole 2014)
-- N-back level improves: 2-back → 3.29 over 22 sessions (Thompson et al. 2016)
+- Some long-term academic gains with Cogmed: d=0.66 reading at 24 months (Soderqvist & Bergman Nutley 2015)
+- N-back level improves: 2-back → 3.29 over 22 sessions (Lawlor-Savage & Goghari 2016)
 
 ### What WM Training CANNOT Do (Far-Transfer)
 - Improve fluid intelligence: **g=0.05** (null, active controls) — Melby-Lervag 2016

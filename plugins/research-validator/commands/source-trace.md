@@ -86,10 +86,10 @@ Trace any metric, number, or scientific claim used in the MemoryForge app back t
 
 | Line | Claim/Metric | EVIDENCE.md Claim | Source | Status |
 |------|-------------|-------------------|--------|--------|
-| 15 | "7 digits" | Claim: "Average adult forward digit span..." | Miller (1956) | ✓ TRACED |
-| 28 | "85-95% accuracy" | Claim: "Healthy adults achieve 85-95% accuracy..." | Owen et al. (2005) | ✓ TRACED |
+| 15 | "7 digits" | Claim: "Average adult forward digit span..." | Wechsler (2008) | ✓ TRACED |
+| 28 | "85-95% accuracy" | Claim: "Healthy adults achieve 85-95% accuracy..." | Aggregate (no single source) | ✓ TRACED |
 | 42 | "improves by 30%" | — | — | ✗ UNTRACED |
-| 55 | "d=0.74" | Claim: "Methylphenidate improves WM with d=0.74..." | Bolden et al. (2021) | ✓ TRACED |
+| 55 | "d=0.74" | Claim: "Methylphenidate improves WM with d=0.74..." | Campez et al. (2022) | ✓ TRACED |
 
 ### Summary
 - Traced: 3/4 (75%)
