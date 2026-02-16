@@ -1,0 +1,8 @@
+{
+  "name": "research-validator",
+  "version": "1.0.0",
+  "description": "Validate scientific claims in the MemoryForge working memory enhancement app against peer-reviewed evidence. Uses PubMed and BioMCP MCP servers to search biomedical literature. Enforces Evidence-Based Medicine (EBM) hierarchy, tracks every claim in EVIDENCE.md with DOI/PMID links, effect sizes, sample sizes, and confidence ratings. Zero tolerance for unverified health claims.",
+  "author": {
+    "name": "Arpit Vyas"
+  }
+}

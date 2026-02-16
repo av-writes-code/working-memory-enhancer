@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "pubmed": {
+      "command": "npx",
+      "args": ["-y", "@cyanheads/pubmed-mcp-server"],
+      "env": {},
+      "_note": "PubMed/MEDLINE via NCBI E-Utilities. Free, no API key required (10 req/sec without key, 30 req/sec with NCBI_API_KEY). For higher throughput, set NCBI_API_KEY in env."
+    },
+    "biomcp": {
+      "command": "uv",
+      "args": ["run", "--python", "3.11", "--with", "biomcp-python", "biomcp", "run"],
+      "env": {},
+      "_note": "BioMCP: PubMed + Europe PMC + bioRxiv/medRxiv + ClinicalTrials.gov + genomic variants. Requires Python 3.10+ (system Python 3.9.6, must specify --python 3.11). Installed 80 packages on first run."
+    }
+  },
+  "_verified": "2026-02-15. Both servers tested with live queries. PubMed returned 575 results for 'working memory training ADHD'. BioMCP returned 7+ papers with DOIs for keyword='working memory' disease='ADHD'."
+}
