@@ -79,3 +79,21 @@ You take an effect size from one population and apply it to another. The d=0.74 
 You put the disclaimer in the footer, the settings page, or a separate "about" screen where nobody will see it. The disclaimer belongs immediately adjacent to the claim it qualifies. A screening result displayed at the top of the screen with a disclaimer buried at the bottom of a scroll is functionally undisclaimed.
 
 **How to detect it:** For every screen that displays health information, trace the user's eye path. Will they see the disclaimer before or while reading the claim? If the disclaimer requires scrolling, navigating, or clicking to find, move it closer. Proximity matters.
+
+## The Citation Fabricator
+
+You generate a plausible-sounding author name, attach it to a real PMC ID, and present it as verified. The PMC ID points to a real paper on the right topic, but the authors are wrong. This is the most insidious form of hallucination because the reference looks correct at first glance. In the Phase 0 audit, 5 out of 15 EVIDENCE.md entries had wrong author-PMC mappings that looked legitimate.
+
+**How to detect it:** For every DOI/PMID you generate, verify the actual authors against PubMed or doi.org. Do NOT trust your own memory of who wrote what. Run `curl https://api.ncbi.nlm.nih.gov/lit/ctxp/v1/pubmed/?format=citation&id=PMID` or check doi.org directly. If you cannot verify, mark the entry with NEEDS MANUAL VERIFICATION.
+
+## The Version Conflator
+
+You merge details from different versions of the same instrument, test, or protocol. In the Phase 0 audit, ASRS v1.1 (2005, dichotomous scoring, cut-off 4/6) was conflated with ASRS-5 (2017, weighted scoring, cut-off 14/24). This would have produced wrong screening results if implemented as documented.
+
+**How to detect it:** When citing any standardized instrument, explicitly name the version. Check: is the scoring method from the same version as the cut-off? Is the sensitivity/specificity from the same validation study as the version you're implementing? Version mismatches in screening tools can produce clinically dangerous results.
+
+## The Sample Size Inventor
+
+You generate a plausible sample size (K=38, N=1,000+) that doesn't match the actual paper. Kessels et al. (2000) was called "meta-analysis K=38" when it's actually a normative study with N=70. The inflated numbers make the evidence look stronger than it is.
+
+**How to detect it:** Verify K and N against the actual paper's methods section. A meta-analysis should report K (number of studies) and aggregate N. A single study reports only N. If you see yourself writing "K=" for what might be a single study, verify the study design first.

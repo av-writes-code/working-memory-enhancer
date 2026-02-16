@@ -40,6 +40,22 @@ For tasks that span more than a handful of steps, pause at the midpoint and refl
 
 This isn't overhead. It's the cheapest form of quality control you have.
 
+## Audit Lessons (Phase 0 → Phase 1 Transition)
+
+The Phase 0 audit (2026-02-15) found that 5/15 EVIDENCE.md entries had wrong author-PMC ID mappings, and several scientific claims were inaccurate. These corrections shaped three new anti-patterns and two process rules.
+
+**Lesson 1: Never trust AI-generated citations without PubMed verification.** AI agents confidently generate plausible author names attached to real PMC IDs. The only reliable check is querying the actual database. Added as "The Citation Fabricator" in anti-patterns.md.
+
+**Lesson 2: Instrument version mismatches are clinically dangerous.** ASRS v1.1 and ASRS-5 have different scoring methods that produce different results. Conflating them would have given users wrong screening results. Added as "The Version Conflator" in anti-patterns.md.
+
+**Lesson 3: Audit before building, not after shipping.** The decision to audit all 31 files before starting Phase 1 caught problems that would have been baked into the app's foundation. This should be a standard gate between phases: research → audit → build.
+
+**Lesson 4: Sample sizes and study designs must be verified independently.** Calling a single-site study (N=70) a "meta-analysis (K=38)" inflates its evidence level. Added as "The Sample Size Inventor" in anti-patterns.md.
+
+**Lesson 5: When copying architecture from another project, audit the conventions.** The ~~category syntax from the BESS plugin doesn't exist in Claude Code. Adopting patterns without verifying they work in the target environment creates dead code.
+
+**Process rule added to CLAUDE.md (rules 7-13):** Population specificity, adverse effect disclosure, statistical vs clinical significance, conflict of interest transparency, outdated evidence removal, screening vs diagnosis language, recommendation authority boundary.
+
 ## Evolving These Docs
 
 These instruction files are not static. They should grow with the project.

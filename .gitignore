@@ -1,11 +1,28 @@
+# Dependencies
 node_modules/
+
+# Next.js
 .next/
 out/
 dist/
+
+# Environment
 .env
 .env.local
 .env.production
+.env*.local
+
+# System
 .DS_Store
 *.tsbuildinfo
+
+# Testing
 coverage/
+
+# Deployment
 .vercel/
+
+# IDE
+.vscode/
+.idea/
+

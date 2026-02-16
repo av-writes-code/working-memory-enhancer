@@ -64,11 +64,13 @@ Every scientific claim must carry a source: DOI, PMID, or specific reference. Ne
 
 ### Project Status
 - **Phase 0**: Research & Planning — COMPLETE (9 research docs, plugin, governance)
-- **Phase 1**: Project Scaffolding — PENDING (Next.js 15 + TypeScript + Tailwind + Vitest)
-- **Codebase**: Pre-implementation (no src/ directory yet; governance docs are source of truth)
+- **Phase 0.5**: Audit & Fix — COMPLETE (5 PMC corrections, ASRS fix, counterevidence, governance hardening)
+- **Phase 1**: Project Scaffolding — COMPLETE (Next.js 16 + TypeScript + Tailwind CSS 4 + Vitest + Dexie.js + Zustand)
+- **Phase 2**: Core Engine — PENDING
+- **Codebase**: Scaffold complete (13 tests passing, build clean, lint clean)
 
 ### Current Phase
-Phase 1: Project scaffolding (Next.js 15 + TypeScript + Tailwind + Vitest + Dexie.js + Zustand)
+Phase 2: Core engine (adaptive difficulty, scoring engine, session manager, data layer)
 
 ### Key Research Findings (Verified in EVIDENCE.md)
 - WM training near-transfer: g=0.28-0.31 (active controls) — works for trained tasks
