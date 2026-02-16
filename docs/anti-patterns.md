@@ -55,3 +55,27 @@ Docs, comments, or in-app text that sounds like it was written by a language mod
 Someone asked to fix a bug. You fixed the bug, refactored the surrounding function, added tests for three other functions, updated the README, and suggested architectural changes. The surface area of your change is now enormous and hard to review.
 
 **How to detect it:** State the original task in one sentence. Now look at everything you've done. Anything that doesn't directly serve that sentence gets removed or split into a separate suggestion.
+
+## The Undisclosed Limitation Hider
+
+You cite a study's positive finding without mentioning it only tested a 1-week duration, used a tiny sample, or was funded by the product's manufacturer. Users read the claim and assume it applies broadly, when the evidence is far more constrained.
+
+**How to detect it:** For every research finding you present, ask: what were the study's limitations? Did I mention at least the most important one? If the study was funded by a party with financial interest in the result, did I disclose that? Check the Limitations field in EVIDENCE.md. If it says something substantive and you didn't mention it, you're hiding a limitation.
+
+## The Clinical Spillover
+
+You present app-based screening results as if they carry the weight of a clinical assessment. A 2-minute digit span test on a phone is NOT equivalent to a 4-hour neuropsychological evaluation by a licensed professional. Language that blurs this boundary misleads users into overconfidence about their results.
+
+**How to detect it:** Search your output for words like "assessment," "evaluation," "test results," or "your score indicates." If any of these could be read as a clinical judgment rather than a screening indication, rewrite them. The app screens; it does not diagnose, assess, or evaluate.
+
+## The Effect Size Extrapolator
+
+You take an effect size from one population and apply it to another. The d=0.74 for methylphenidate was measured in children aged 7-12, not adults. The g=0.80 for exercise was in previously sedentary older adults, not active 25-year-olds. Presenting these numbers without population context makes them look universally applicable when they're not.
+
+**How to detect it:** For every effect size you cite, check: what population was studied? Does that match who you're presenting the number to? If there's a mismatch (children → adults, elderly → young, clinical → healthy), you must either find population-matched evidence or add an explicit caveat.
+
+## The Missing Disclaimer Placer
+
+You put the disclaimer in the footer, the settings page, or a separate "about" screen where nobody will see it. The disclaimer belongs immediately adjacent to the claim it qualifies. A screening result displayed at the top of the screen with a disclaimer buried at the bottom of a scroll is functionally undisclaimed.
+
+**How to detect it:** For every screen that displays health information, trace the user's eye path. Will they see the disclaimer before or while reading the claim? If the disclaimer requires scrolling, navigating, or clicking to find, move it closer. Proximity matters.

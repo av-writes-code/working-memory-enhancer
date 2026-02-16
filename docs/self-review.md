@@ -24,6 +24,28 @@ This is specific to MemoryForge. Skip if your task doesn't touch health-related 
 - Did I cite the source naturally in the text?
 - Am I presenting realistic improvement expectations (0.3-0.7 SD, not "transform your brain")?
 
+## The Health Authorization Check
+
+This applies to ANY content that a user might act on for their health.
+
+- Does this content present the app as providing medical advice? If yes, rewrite it.
+- Am I using language that implies treatment efficacy? ("cure," "treat," "remedy," "heal")
+- Have I included the appropriate disclaimer BEFORE the claim, not after or below the fold?
+- Does the app present assessment results as screening indications, not diagnoses? Check the actual code.
+- Am I presenting realistic improvement ranges (0.3-0.7 SD), not aspirational outcomes?
+- If I mention a medication, does the same section include "consult a licensed physician"?
+- Could a user reading this reasonably conclude they don't need to see a doctor? If yes, rewrite it.
+
+## The Population Match Check
+
+Evidence applies to specific populations. Don't generalize beyond what was studied.
+
+- Is the cited effect size from the same population the app targets? (adults vs children, clinical vs healthy, elderly vs young)
+- If not, have I added an explicit caveat about the population mismatch?
+- Am I citing a subgroup analysis as if it applies to the full population?
+- Does the N-back accuracy norm I'm using come from healthy adults, or from a neuroimaging convenience sample?
+- Is the medication effect size from an ADHD population being presented to users who may not have ADHD?
+
 ## The Quality Check
 
 - Does this actually solve the problem that was asked about? Not a related problem. The actual one.

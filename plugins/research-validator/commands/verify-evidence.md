@@ -1,6 +1,6 @@
 ---
 description: Audit EVIDENCE.md for completeness, correctness, and currency. Checks all entries have required fields, DOIs resolve, and no cited papers have been retracted.
-argument-hint: "[--full | --entry N | --retraction-check]"
+argument-hint: "[--full | --entry \"claim text\" | --retraction-check]"
 ---
 
 # /verify-evidence
@@ -13,7 +13,7 @@ Audit the EVIDENCE.md file for structural completeness, data correctness, and so
 ```
 /verify-evidence                         # Quick structural audit
 /verify-evidence --full                  # Full audit including DOI resolution
-/verify-evidence --entry 7               # Verify a single entry
+/verify-evidence --entry "Methylphenidate improves WM"  # Verify a single claim
 /verify-evidence --retraction-check      # Check all papers for retractions
 /verify-evidence --freshness             # Flag entries older than 2 years
 ```
@@ -60,7 +60,7 @@ Audit the EVIDENCE.md file for structural completeness, data correctness, and so
 ┌─────────────────────────────────────────────────────────┐
 │  STEP 4: Source Verification (--full only)                │
 │  - Check each DOI resolves via doi.org                    │
-│  - Check each PMID resolves via ~~pubmed                  │
+│  - Check each PMID resolves via the `pubmed` MCP server   │
 │  - Check Retraction Watch database for flagged papers     │
 │  - Check publication date (flag if >5 years for fast-     │
 │    moving fields like neuroimaging)                       │
@@ -85,30 +85,30 @@ Audit the EVIDENCE.md file for structural completeness, data correctness, and so
 - Source issues: [N] (--full only)
 
 ### Structural Issues
-| Entry # | Claim | Missing Fields |
-|---------|-------|---------------|
-| 3 | "Exercise improves WM" | Effect Size, Replicated? |
-| 11 | "tDCS + training..." | Sample Size |
+| Claim | Missing Fields |
+|-------|---------------|
+| "Exercise improves WM" | Effect Size, Replicated? |
+| "tDCS + training..." | Sample Size |
 
 ### Consistency Warnings
-| Entry # | Issue |
-|---------|-------|
-| 5 | Level I evidence but Confidence=LOW (should be at least MEDIUM) |
-| 8 | Study Design="Case Report" but Level=III (should be Level V) |
-| 14 | Effect size d=4.2 — implausibly large for behavioral intervention |
+| Claim | Issue |
+|-------|-------|
+| "Sleep deprivation reduces WM capacity..." | Level I evidence but Confidence=LOW (should be at least MEDIUM) |
+| "Case report of WM improvement after..." | Study Design="Case Report" but Level=III (should be Level V) |
+| "Transcranial stimulation produces d=4.2..." | Effect size d=4.2 — implausibly large for behavioral intervention |
 
 ### Source Issues (--full only)
-| Entry # | Issue |
-|---------|-------|
-| 2 | DOI does not resolve (404) |
-| 9 | Paper retracted 2025-08-15 |
-| 12 | Published 2012 — newer meta-analysis available (2023) |
+| Claim | Issue |
+|-------|-------|
+| "Dual N-back training transfers to..." | DOI does not resolve (404) |
+| "Cognitive training prevents dementia..." | Paper retracted 2025-08-15 |
+| "Working memory capacity predicts..." | Published 2012 — newer meta-analysis available (2023) |
 
 ### Action Items
-1. [Priority] Fix Entry #9 — cited paper is RETRACTED
-2. [High] Add missing Effect Size to Entry #3
-3. [Medium] Update Entry #12 with newer source
-4. [Low] Review confidence rating for Entry #5
+1. [Priority] Fix Claim "Cognitive training prevents dementia..." — cited paper is RETRACTED
+2. [High] Add missing Effect Size to Claim "Exercise improves WM"
+3. [Medium] Update Claim "Working memory capacity predicts..." with newer source
+4. [Low] Review confidence rating for Claim "Sleep deprivation reduces WM capacity..."
 ```
 
 ## Consistency Rules
@@ -126,11 +126,13 @@ Audit the EVIDENCE.md file for structural completeness, data correctness, and so
 | Flag | Effect |
 |------|--------|
 | `--full` | Include DOI resolution and retraction checks (slower, needs network) |
-| `--entry N` | Check only entry number N |
-| `--retraction-check` | Only check for retractions (uses ~~pubmed) |
+| `--entry "claim text"` | Check only the entry matching the given claim text |
+| `--retraction-check` | Only check for retractions (uses the `pubmed` MCP server) |
 | `--freshness` | Flag entries with sources older than 2 years |
 | `--strict` | Exit 1 if any structural issues found — for CI pipeline |
 | `--fix` | Interactive mode to fix issues one by one |
+
+**Implementation note:** These flags are interpreted by Claude during command execution, not by a built-in parser. Claude reads the flag documentation and adjusts behavior accordingly. There is no automated flag parsing.
 
 ## Tips
 1. Run before every PR that touches app content or EVIDENCE.md

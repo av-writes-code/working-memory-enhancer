@@ -20,23 +20,25 @@ description: Use when building, reviewing, or discussing working memory assessme
 
 | Measure | Adult Average | Range | Impairment Flag | Source |
 |---------|--------------|-------|-----------------|--------|
-| Forward span | **7 digits** | 5–9 | **Below 5** | Miller (1956), Wechsler (2008) |
+| Forward span | **7 digits** | 5–9 | **Below 5** | Wechsler (2008)¹ |
 | Backward span | **5 digits** | 4–7 | **Below 3** | Wechsler (2008) |
 | Sequencing span | ~5 digits | 3–7 | Below 3 | WAIS-IV manual |
 | **Forward − Backward gap** | 1–2 digits | 0–3 | **Gap ≥ 3** = executive deficit | Clinical convention |
+
+> ¹ Note: Miller (1956) 'Magical Number Seven' concerns information chunks, not digit span norms specifically.
 
 ### Corsi Block Test (Visuospatial WM)
 
 | Measure | Average | Range | Impairment | Source |
 |---------|---------|-------|------------|--------|
-| Forward span | **5–6 blocks** | 4–8 | Below 4 | Kessels et al. (2000), meta-analysis |
-| Backward span | **~5 blocks** | 3–7 | Below 4 | Kessels et al. (2000) |
+| Forward span | **5–6 blocks** | 4–8 | Below 4 | Kessels et al. (2000) (normative study, N=70, not a meta-analysis) |
+| Backward span | **~5 blocks** | 3–7 | Below 4 | Kessels et al. (2000) (normative study, N=70, not a meta-analysis) |
 
 ### N-Back (Updating/Monitoring)
 
 | Measure | Average | Range | Impairment | Source |
 |---------|---------|-------|------------|--------|
-| 2-back accuracy | **85–95%** | 70–100% | Below 70% | Owen et al. (2005) |
+| 2-back accuracy | **85–95%** | 70–100% | Below 70% | Aggregate from N-back literature (no single definitive normative study exists); see EVIDENCE.md |
 | 2-back d' (sensitivity) | 2.0–3.0 | 1.0–4.0 | Below 1.5 | Various |
 | Typical training start | 2-back | — | — | Thompson et al. (2016) |
 | Typical training ceiling | 3-back (mean 3.29) | 2–6 | — | Thompson et al. (2016): 52% reach 4-back, 15% reach 6-back |
@@ -72,6 +74,11 @@ description: Use when building, reviewing, or discussing working memory assessme
 - **Typical improvement**: 0.3–0.7 SD ≈ 1–2 additional items on span tasks
 - **Best combined outcomes**: Medication + training + exercise + sleep
 - **Timeline**: Training gains appear by week 3–5; medication effects within hours (stimulants) to months (atomoxetine)
+
+### Critical Counterevidence (Intellectual Honesty)
+- Sala & Gobet (2020): When controlling for study quality (active controls, blinding, pre-registration), cognitive training effects approach null
+- Simons et al. (2016): Consensus statement from leading researchers — evidence does NOT support claims that brain-training improves general cognitive abilities
+- These findings do NOT negate near-transfer benefits but constrain what we can honestly claim
 
 ### Inverted-U Dose-Response for Dopamine (Arnsten 2011)
 - Too LITTLE prefrontal dopamine: poor WM (understimulated)

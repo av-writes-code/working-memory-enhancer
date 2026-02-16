@@ -14,8 +14,8 @@ description: Use when any claim involves medication, supplements, or pharmacolog
 | Mechanism | Blocks DAT/NET reuptake in PFC → increases synaptic DA/NE → engages D1 + alpha-2A receptors | Arnsten (2011) |
 | Brands (India) | Addwize (Sun Pharma), Inspiral (Intas) | Schedule X, INR 108–167/strip |
 | Adult dosage | Start 18mg, titrate +18mg/week, target 36–54mg, max 72mg/day | Standard titration protocol |
-| WM effect size | **d=0.26–0.74** (acute, ADHD children) | Bolden et al. 2021 (PMID: PMC8406432) |
-| WM at high load | **d=1.17** (high WM load specifically) | Bolden et al. 2021 |
+| WM effect size | **d=0.26–0.74** (acute, ADHD children) | Bolden et al. 2021 (PMC ID pending verification; effect sizes d=0.74 and d=1.17 are from the Bolden/Campez methylphenidate-WM literature) |
+| WM at high load | **d=1.17** (high WM load specifically) | Bolden et al. 2021 (PMC ID pending verification) |
 | Meta-analytic (chronic) | g=0.34–0.59 across cognitive domains | Various meta-analyses |
 | Onset | Hours (correct dose) | Clinical observation |
 | Key insight | Improves WM efficiency/manipulation, NOT raw digit span capacity | Consistent across studies |
@@ -40,8 +40,8 @@ description: Use when any claim involves medication, supplements, or pharmacolog
 | Mechanism | Selective NE reuptake inhibitor; also increases PFC dopamine (via NET in PFC) | Bymaster et al. (2002) |
 | Brands (India) | Axepta, Attentrol — NOT controlled substance, widely available | INR 100–400/month |
 | Dosage | Start 40mg, target 80mg after 3 days, max 100mg | Standard protocol |
-| Timeline | 1–2 weeks partial; **4–6 weeks full effect**; **d=0.82 by month 6 at 80mg** | PMC4141744 |
-| ADHD symptoms | SMD=-0.45 (p<0.00001, N=445, 12 weeks) | PMC4141744 |
+| Timeline | 1–2 weeks partial; **4–6 weeks full effect**; **d=0.82 by month 6 at 80mg** (d=0.82 is specifically for the 80mg subgroup from open-label extension data, not the blinded RCT phase) | PMC5069588 (Camporeale et al. 2016 pooled analysis) |
+| ADHD symptoms | SMD=-0.45 (p<0.00001, N=445, 12 weeks) | PMC5069588 (Camporeale et al. 2016 pooled analysis) |
 | Best when | Stimulant supply irregular, abuse risk, comorbid anxiety | Clinical guidelines |
 
 ### Guanfacine (Extended-Release)

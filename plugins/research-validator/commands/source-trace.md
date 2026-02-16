@@ -72,7 +72,7 @@ Trace any metric, number, or scientific claim used in the MemoryForge app back t
 | Step | Location | Value |
 |------|----------|-------|
 | App Display | `src/components/X.tsx:42` | "average digit span of 7" |
-| EVIDENCE.md | Entry #12 | "Forward digit span mean=7 (range 5-9)" |
+| EVIDENCE.md | Claim: "Average adult forward digit span is 7 digits..." | HIGH confidence |
 | Primary Source | Miller (1956) + Wechsler (2008) | Established normative data |
 | DOI/PMID | PMID: [link] | Verified ✓ |
 
@@ -84,12 +84,12 @@ Trace any metric, number, or scientific claim used in the MemoryForge app back t
 ```markdown
 ## Source Trace Audit: [filename]
 
-| Line | Claim/Metric | EVIDENCE.md Entry | Source | Status |
+| Line | Claim/Metric | EVIDENCE.md Claim | Source | Status |
 |------|-------------|-------------------|--------|--------|
-| 15 | "7 digits" | #12 | Miller (1956) | ✓ TRACED |
-| 28 | "85-95% accuracy" | #18 | Owen et al. (2005) | ✓ TRACED |
+| 15 | "7 digits" | Claim: "Average adult forward digit span..." | Miller (1956) | ✓ TRACED |
+| 28 | "85-95% accuracy" | Claim: "Healthy adults achieve 85-95% accuracy..." | Owen et al. (2005) | ✓ TRACED |
 | 42 | "improves by 30%" | — | — | ✗ UNTRACED |
-| 55 | "d=0.74" | #7 | Bolden et al. (2021) | ✓ TRACED |
+| 55 | "d=0.74" | Claim: "Methylphenidate improves WM with d=0.74..." | Bolden et al. (2021) | ✓ TRACED |
 
 ### Summary
 - Traced: 3/4 (75%)
@@ -108,6 +108,8 @@ Scans ALL `.tsx`, `.ts`, and `.md` files in `src/` for numeric claims, percentag
 | `--fix` | Interactively add missing EVIDENCE.md entries for UNTRACED claims |
 | `--strict` | Fail (exit 1) if ANY claim is UNTRACED — useful for CI pipeline |
 
+**Implementation note:** These flags are interpreted by Claude during command execution, not by a built-in parser. Claude reads the flag documentation and adjusts behavior accordingly. There is no automated flag parsing.
+
 ## Trace Status Definitions
 
 | Status | Meaning | Action |
@@ -122,4 +124,4 @@ Scans ALL `.tsx`, `.ts`, and `.md` files in `src/` for numeric claims, percentag
 1. Run `--audit` before every release to catch untraced claims
 2. Use `--strict` in CI/CD to block deploys with unverified claims
 3. When adding new features, run `--file` on each new component
-4. Keep EVIDENCE.md entries numbered for easy cross-referencing
+4. EVIDENCE.md entries use `## Claim:` headers — reference them by claim text snippet

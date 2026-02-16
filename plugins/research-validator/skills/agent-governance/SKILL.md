@@ -58,7 +58,7 @@ Every scientific claim displayed to users MUST have a corresponding entry in `EV
 ### Before Any Claim Enters the App:
 ```
 1. Write the claim in plain English
-2. Search ~~pubmed and/or ~~preprints for supporting evidence
+2. Search the `pubmed` MCP server and/or the `biomcp` MCP server for supporting evidence
 3. Find the BEST available evidence (highest on EBM pyramid)
 4. Record: DOI/PMID, study design, N, effect size, replication status
 5. Assign evidence level (I–VI) using evidence-hierarchy skill
@@ -79,7 +79,7 @@ Every scientific claim displayed to users MUST have a corresponding entry in `EV
 
 ### Quarterly Review Protocol:
 ```
-1. Search ~~pubmed for each claim using same search terms
+1. Search the `pubmed` MCP server for each claim using same search terms
 2. Check for retractions of cited papers
 3. Check for newer systematic reviews
 4. Update effect sizes if newer meta-analyses available
@@ -97,3 +97,5 @@ Every scientific claim displayed to users MUST have a corresponding entry in `EV
 | "FDA approved for memory" | No WM training is FDA approved | Remove claim entirely |
 | "Doctor recommended" | Unverifiable | Remove or cite specific guideline |
 | Citing a single study as definitive | Single study ≠ established fact | "One study (N=X) found..." with LOW confidence |
+| "Based on a meta-analysis of 38 studies" | Fabricated sample size — verify K/N against actual paper | Check actual paper's methods section |
+| Citing neuroimaging paper for behavioral norms | Paper studies brain activation, not performance thresholds | Verify paper actually reports the metric type you're citing |

@@ -1,4 +1,5 @@
 {
+  "_architecture_note": "REFERENCE DOCUMENTATION ONLY. Claude Code loads MCP servers exclusively from ~/.claude.json (global config). This file documents which servers the plugin expects but does NOT configure them. See README.md for setup instructions.",
   "mcpServers": {
     "pubmed": {
       "command": "npx",

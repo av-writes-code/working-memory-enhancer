@@ -42,7 +42,7 @@ Output using this exact format:
 | Step | Location | Value |
 |------|----------|-------|
 | App Display | `[file:line]` | "[exact text]" |
-| EVIDENCE.md | Entry #[N] | "[entry summary]" |
+| EVIDENCE.md | Claim: "[matching claim text]" | "[entry summary]" |
 | Primary Source | [Author (Year)] | [finding as stated in paper] |
 | DOI/PMID | [link] | [Verified ✓ / Not Found ✗] |
 

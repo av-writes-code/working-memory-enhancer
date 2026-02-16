@@ -35,8 +35,10 @@ Verify a scientific claim against peer-reviewed biomedical literature and return
                         ▼
 ┌─────────────────────────────────────────────────────────┐
 │  STEP 2: Search Literature                               │
-│  - ~~pubmed: MeSH-term query for subject + object         │
-│  - ~~preprints: BioMCP keyword + disease search           │
+│  - the `pubmed` MCP server (PubMed/MEDLINE):               │
+│    MeSH-term query for subject + object                    │
+│  - the `biomcp` MCP server (bioRxiv/medRxiv/Europe PMC):   │
+│    keyword + disease search                                │
 │  - Prioritize: meta-analyses > RCTs > cohort studies      │
 │  - Collect: DOI, N, study design, effect size, year       │
 └───────────────────────┬─────────────────────────────────┘
@@ -126,6 +128,8 @@ Verify a scientific claim against peer-reviewed biomedical literature and return
 | `--india` | Include India-specific availability/pricing data for pharmacological claims |
 | `--update` | Also update EVIDENCE.md with the result (prompts before writing) |
 | `--preprints` | Include preprints in search (default: peer-reviewed only) |
+
+**Implementation note:** These flags are interpreted by Claude during command execution, not by a built-in parser. Claude reads the flag documentation and adjusts behavior accordingly. There is no automated flag parsing.
 
 ## Tips
 1. Quote the full claim including any numbers — the command verifies quantifiers too

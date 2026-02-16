@@ -62,6 +62,11 @@ Every scientific claim must carry a source: DOI, PMID, or specific reference. Ne
 
 ## DYNAMIC — These evolve as the project progresses
 
+### Project Status
+- **Phase 0**: Research & Planning — COMPLETE (9 research docs, plugin, governance)
+- **Phase 1**: Project Scaffolding — PENDING (Next.js 15 + TypeScript + Tailwind + Vitest)
+- **Codebase**: Pre-implementation (no src/ directory yet; governance docs are source of truth)
+
 ### Current Phase
 Phase 1: Project scaffolding (Next.js 15 + TypeScript + Tailwind + Vitest + Dexie.js + Zustand)
 
@@ -139,6 +144,40 @@ Phase 1: Project scaffolding (Next.js 15 + TypeScript + Tailwind + Vitest + Dexi
 **"I need the zero-hallucination rules"**
 → Skill `agent-governance` (always active for health content)
 
+**"I need to add a new assessment task"**
+→ Read `diagnostic-standards` skill for thresholds and normative data
+→ Then run `/fact-check` on any claims the assessment will display
+
+**"I need to write in-app copy or text"**
+→ Read `docs/writing-principles.md` for voice and qualifier rules
+→ Check `docs/anti-patterns.md` for AI Prose Generator pattern
+
+**"I need to add a new training exercise"**
+→ Check EVIDENCE.md for supporting evidence on the exercise type
+→ Run `/fact-check` if the exercise makes any efficacy claims
+→ Follow adaptive difficulty algorithm in `working-memory-science` skill
+
+**"I need to add medication or supplement information"**
+→ Run `/fact-check` first → then update EVIDENCE.md → then `pharmacology` skill for formatting
+
+**"I need to create or update a disclaimer"**
+→ Read `agent-governance` skill for mandatory disclaimer text
+→ Check `docs/writing-principles.md` for health-specific writing rules
+
+**"I need to understand the data model"**
+→ Read `04-HLD.md` for schema design (UserProfile, AssessmentResult, TrainingSession, DailySummary)
+
+**"I need to fix a failing test"**
+→ Read the test error first, then check surrounding test files for patterns
+→ Follow test pyramid: 70% unit, 20% integration, 10% E2E
+
+**"I need to audit my changes before submitting"**
+→ Run through `docs/self-review.md` checklist (including Evidence Check for health content)
+
+**"I need to evaluate if a claim is ready for the app"**
+→ Run `/fact-check --strict` → only HIGH confidence claims for prominent features
+→ MEDIUM confidence acceptable with qualifiers → LOW/INSUFFICIENT = do not include
+
 ### Creating New Skills
 After completing a multi-step task that required custom logic not covered above, ask: would a future session need to do this again? If yes, create a skill in `.claude/skills/` following the existing SKILL.md pattern, then add a routing line to this section.
 
@@ -152,3 +191,10 @@ After completing a multi-step task that required custom logic not covered above,
 4. **Disclaimer on every screen** — assessments, medications, red flags all need appropriate disclaimers.
 5. **Active-control effect sizes only** — never cite passive-control comparisons as primary evidence.
 6. **No far-transfer claims** — WM training does NOT improve IQ (g=0.05). Never claim otherwise.
+7. **Screening vs diagnosis language** — every assessment result must use "screening indication" never "diagnosis." Check both code and copy.
+8. **Population specificity** — claims about "ADHD children" cannot be presented as applying to "all adults." Match evidence population to app context.
+9. **Adverse effect disclosure** — if mentioning medication effectiveness, the same section must include side effects and safety information. Benefits without risks is misleading.
+10. **Recommendation authority boundary** — the app is informational only. Never use language that prescribes, recommends, or directs treatment. "Research shows X works" is fine. "You should take X" is not.
+11. **Statistical vs clinical significance** — a statistically significant finding (p<0.05) can be clinically trivial (d<0.20). Always report effect sizes alongside p-values. Never cite p-values alone as proof of meaningful improvement.
+12. **Conflict of interest transparency** — if citing research funded by the training company (e.g., Pearson-funded Cogmed studies), disclose this. "Note: This study was funded by the training program's publisher."
+13. **Outdated evidence removal** — if a newer meta-analysis supersedes a cited source, update EVIDENCE.md within one session. Old entries get marked "SUPERSEDED BY: [new DOI]" not deleted.

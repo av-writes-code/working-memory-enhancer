@@ -26,18 +26,22 @@ description: Use when building or reviewing assessment modules, screening tools,
 
 ## Implementable Screening Tools
 
-### ASRS v1.1 (Adult ADHD Self-Report Scale)
+### ASRS-5 (DSM-5 Version, Ustun et al. 2017)
 
 | Property | Data |
 |----------|------|
 | Type | Self-report, 6-question screener (Part A) + 12 additional (Part B) |
 | Developer | WHO (World Health Organization) |
 | License | **FREE** — public domain with citation required |
-| Scoring | 5-point Likert (Never=0 to Very Often=4) |
-| Cut-off (Part A) | **14+ = positive screen** |
+| Scoring | **Weighted scoring — NOT uniform Likert**. Items have different maximum scores (range 2-5 per item). A simple 0-4 sum will produce INCORRECT results. |
+| Cut-off (Part A) | **14+ = positive screen** (weighted score, max 24) |
 | Sensitivity | **91.4%** |
 | Specificity | **96.0%** |
 | Source | Ustun et al. 2017 (JAMA Psychiatry, N=3,015 updated validation) |
+
+**CRITICAL**: Do NOT implement as simple 0-4 Likert sum. Each question has a different weight mapping. Refer to Ustun et al. 2017 supplementary materials for exact item weights. Implementing uniform weights will give users WRONG screening results.
+
+**ASRS v1.1 alternative**: The original ASRS v1.1 (Kessler 2005) uses dichotomous 'shaded box' scoring with cut-off 4/6 on Part A. This is simpler to implement correctly. Consider using v1.1 if weighted scoring cannot be accurately implemented.
 
 **Implementation requirements:**
 1. All 6 Part A questions must be presented exactly as published
@@ -130,7 +134,7 @@ For educational reference in app (NOT for self-diagnosis):
 > "These are screening tools, NOT diagnostic instruments. Only a licensed professional can make a clinical diagnosis. Environmental factors (fatigue, distraction, anxiety) affect results. Always retest on a different day before drawing conclusions."
 
 **On ASRS screen:**
-> "The ASRS v1.1 was developed by the World Health Organization. A positive screen does NOT mean you have ADHD. Please discuss results with a healthcare provider."
+> "The ASRS was developed by the World Health Organization. A positive screen does NOT mean you have ADHD. Please discuss results with a healthcare provider."
 
 **On any red-flag notification:**
 > "This result suggests you may benefit from professional evaluation. This is NOT a diagnosis. Many factors can affect test performance."

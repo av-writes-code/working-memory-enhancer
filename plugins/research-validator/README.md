@@ -21,7 +21,7 @@ plugins/research-validator/
 │   └── plugin.json              # Plugin manifest
 ├── .mcp.json                    # MCP server connections (PubMed + BioMCP)
 ├── README.md                    # This file
-├── CONNECTORS.md                # ~~category data source documentation
+├── CONNECTORS.md                # Data source connector documentation
 ├── commands/
 │   ├── fact-check.md            # /fact-check "claim" — verify against literature
 │   ├── source-trace.md          # /source-trace "metric" — trace to origin paper
@@ -78,12 +78,14 @@ MCP servers are configured globally in `~/.claude.json`:
       "env": {}
     },
     "biomcp": {
-      "command": "uv",
+      "command": "/Users/arpitvyas/.local/bin/uv",
       "args": ["run", "--python", "3.11", "--with", "biomcp-python", "biomcp", "run"],
       "env": {}
     }
   }
 }
 ```
+
+> **Note:** Adjust the `uv` path to match your system. Find it with `which uv`. The example above uses the absolute path `/Users/arpitvyas/.local/bin/uv` because Claude Code requires absolute paths for MCP server commands.
 
 Both servers are free with no API key required.
